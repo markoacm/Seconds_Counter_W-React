@@ -1,24 +1,74 @@
 import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
+
+
+
 
 //create your first component
-const Home = () => {
+const Home = (props) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="box row container-sm m-5">
+			<div className="row m-2 p-5">
+
+  				<div className="col">
+    				<div className="card h-100">
+      					<div className="card-body">
+							<p className="card-text display-1">
+							<FontAwesomeIcon icon={faClock} />
+							</p>
+      					</div>
+    				</div>
+  				</div>
+  				<div className="col">
+					<div className="card h-100">
+						<div className="card-body">	
+							<p className="card-text display-1">{props.digitSix % 10}</p>
+						</div>
+					</div>
+  				</div>
+				<div className="col">
+					<div className="card h-100">
+						<div className="card-body">
+							<p className="timer5 card-text display-1">{props.digitFive % 10}</p>
+						</div>
+					</div>
+				</div>
+
+				<div className="col">
+    				<div className="card h-100">
+      					<div className="card-body">
+        					<p className="timer4 card-text display-1">{props.digitFour % 10}</p>
+      					</div>
+    				</div>
+  				</div>
+
+  				<div className="col">
+					<div className="card h-100">
+						<div className="card-body">
+							<p className="timer3 card-text display-1">{props.digitThree % 10}</p>
+						</div>
+					</div>
+  				</div>
+
+				<div className="col">
+					<div className="card h-100">
+						<div className="card-body">
+							<p className="timer2 card-text display-1">{props.digitTwo % 10}</p>
+						</div>
+					</div>
+				</div>
+
+				<div className="col">
+    				<div className="card h-100">
+      					<div className="card-body">
+							
+        					<p className=" timer1 card-text display-1">{props.digitOne % 10}</p>
+      					</div>
+    				</div>
+  				</div>
+			</div>
 		</div>
 	);
 };
